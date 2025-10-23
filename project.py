@@ -3,6 +3,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
+st.secrets["OPENAI_API_KEY"]
 
 load_dotenv()
 
@@ -35,4 +36,5 @@ if st.button("Answer"):
         response=generate_response(query,llm,temperature,max_tokens,api)
         st.write(response)
     else:
+
         st.warning("Please Enter some Query")
